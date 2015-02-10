@@ -5,5 +5,4 @@ a webserver written by nim
 Usage
 ==============
 
-$ nim c main.nim
-$ ./main
+`nim c -d:release main.nim`
