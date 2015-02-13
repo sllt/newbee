@@ -7,7 +7,7 @@ proc cb(req: Request) {.async.} =
   echo req.hostname
   let uri = req.url.path[1.. -1]
   if uri == "":
-    if fileExists(rootPath.joinPath("index.html")) == true:
+    if fileExists(rootPath.joinPath("index.html")) == true and fileExists(rootPath.joinPath("default.html")) == true :
       var str = readFile(rootPath.joinPath("index.html"))
       await req.respond(Http200, str)
     else:
